@@ -1,0 +1,24 @@
+{
+  "name": "@acentric-sandboxes/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared types for acentric Python sandboxes: executions, providers, limits and errors.",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "tsc -p tsconfig.json && tsc -p tsconfig.build.json --noEmit",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "clean": "rm -rf dist"
+  }
+}
