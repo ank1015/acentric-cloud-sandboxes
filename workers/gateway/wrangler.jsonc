@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "acentric-sandboxes-gateway",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-25",
+  // Aborts the provider calls when the caller disconnects.
+  "compatibility_flags": ["enable_request_signal", "request_signal_passthrough"],
+  "workers_dev": true,
+  "routes": [{ "pattern": "execution.cloud.acentric.dev", "custom_domain": true }],
+  "preview_urls": false,
+  "observability": { "enabled": true },
+}

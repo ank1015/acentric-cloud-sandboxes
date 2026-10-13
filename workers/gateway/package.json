@@ -1,0 +1,22 @@
+{
+  "name": "@acentric-sandboxes/gateway",
+  "version": "0.0.0",
+  "private": true,
+  "description": "The acentric sandbox gateway: one Cloudflare Worker that runs Python in the caller's own sandboxes. Stateless; callers bring their own credentials.",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter \"@acentric-sandboxes/gateway^...\" build && wrangler dev",
+    "deploy": "pnpm --filter \"@acentric-sandboxes/gateway^...\" build && wrangler deploy",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "check": "tsc -p tsconfig.json",
+    "test": "node --conditions=source --test \"test/**/*.test.ts\"",
+    "clean": "rm -rf dist .wrangler"
+  },
+  "dependencies": {
+    "@acentric-sandboxes/contracts": "workspace:*",
+    "@acentric-sandboxes/providers": "workspace:*"
+  },
+  "devDependencies": {
+    "wrangler": "4.144.0"
+  }
+}
