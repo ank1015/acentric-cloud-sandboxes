@@ -1,0 +1,19 @@
+{
+  "source": "packages/sdk",
+  "name": "@acentric-cloud/execution",
+  "version": "0.1.0",
+  "keywords": [
+    "python",
+    "sandbox",
+    "code-execution",
+    "e2b",
+    "daytona",
+    "blaxel",
+    "tensorlake",
+    "sdk"
+  ],
+  "vendor": {
+    "@acentric-sandboxes/contracts": "packages/contracts",
+    "@acentric-sandboxes/providers": "packages/providers"
+  }
+}
