@@ -1,0 +1,8 @@
+packages:
+  - packages/*
+  - workers/*
+
+# Install scripts are approved one package at a time.
+allowBuilds:
+  esbuild: true
+  workerd: true

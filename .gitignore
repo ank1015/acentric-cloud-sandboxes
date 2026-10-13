@@ -1,0 +1,21 @@
+.DS_Store
+node_modules/
+dist/
+*.tsbuildinfo
+package-lock.json
+.env
+.env.*
+!.env.example
+
+# Cloudflare Workers
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# npm staging
+.publish/
