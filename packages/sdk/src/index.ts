@@ -1,4 +1,4 @@
-export * from '@acentric-sandboxes/contracts';
+export * from './core.ts';
 export { createClient, DEFAULT_BASE_URL, type ClientOptions } from './client.ts';
 export type {
   CallOptions,

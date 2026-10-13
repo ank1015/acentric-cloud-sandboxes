@@ -58,6 +58,20 @@ const sandboxes = createDirectClient({ credentials: { daytona: { apiKey: '...' }
 The same client, calling providers from your process with the adapters the
 gateway runs. It bundles every adapter.
 
+## Without fetch: `@acentric-cloud/execution/core`
+
+```ts
+import {
+  MAX_YIELD_MS,
+  type ExecutionHandle,
+  type ExecutionResult,
+} from '@acentric-cloud/execution/core';
+```
+
+Everything but the clients: the request and response types, `SandboxError`
+and the limits. It needs only ECMAScript, so it loads where `fetch` and the DOM
+are absent, such as the pure half of an acentric-cloud agent.
+
 ## Providers
 
 | Provider     | `credentials`            | `sandboxId`        |

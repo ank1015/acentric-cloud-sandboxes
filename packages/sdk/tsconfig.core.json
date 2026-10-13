@@ -1,0 +1,6 @@
+{
+  "//": "Checks that the core entry needs nothing but ECMAScript: no DOM, no fetch, no Node.",
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "noEmit": true, "lib": ["ES2023"], "types": [] },
+  "files": ["src/core.ts"]
+}

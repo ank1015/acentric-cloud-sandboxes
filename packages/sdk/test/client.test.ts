@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { createClient, SandboxError, type ExecutionHandle } from '../src/index.ts';
 import { createDirectClient } from '../src/direct.ts';
+import * as core from '../src/core.ts';
 
 /** A fetch answering every call with `body`, recording what was sent. */
 function fakeFetch(body: unknown, status = 200) {
@@ -124,4 +125,10 @@ test('the gateway client defaults to the gateway acentric runs', async () => {
     sandboxId: 'sbx',
   });
   assert.equal(sent[0]!.url, 'https://execution.cloud.acentric.dev/v1/executions/list');
+});
+
+test('the core entry has the contracts and no client', () => {
+  assert.equal(typeof core.SandboxError, 'function');
+  assert.equal(typeof core.MAX_YIELD_MS, 'number');
+  assert.equal('createClient' in core, false);
 });

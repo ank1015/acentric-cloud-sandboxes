@@ -1,7 +1,7 @@
 {
   "source": "packages/sdk",
   "name": "@acentric-cloud/execution",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "python",
     "sandbox",

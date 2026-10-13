@@ -40,7 +40,13 @@ const entries: Record<string, string> = {};
 for (const [name, dir] of Object.entries(config.vendor)) {
   const target = join(dist, 'vendor', name.split('/').pop()!);
   copyDist(join(root, dir, 'dist'), target);
-  entries[name] = join(target, 'index.js');
+  // Each of its exports by specifier: `name` for `.`, `name/sub` for `./sub`.
+  const vendored = JSON.parse(readFileSync(join(root, dir, 'package.json'), 'utf8'));
+  for (const [path, entry] of Object.entries(
+    vendored.exports as Record<string, { default: string }>,
+  )) {
+    entries[name + path.slice(1)] = join(target, relative('dist', entry.default));
+  }
 }
 
 for (const file of files(dist)) {
